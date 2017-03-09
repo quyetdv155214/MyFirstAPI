@@ -29,7 +29,7 @@ class TaskRes(Resource):
     def delete(self, task_id):
         task = Task.objects.with_id(task_id)
         task.delete()
-        return task
+        return {"message":"deleted"}
     def put(self, task_id):
         task = Task.objects.with_id(task_id)
         parser = reqparse.RequestParser()
